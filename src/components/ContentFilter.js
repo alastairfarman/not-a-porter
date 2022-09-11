@@ -10,6 +10,7 @@ export default function ContentFilter(props) {
       return product.category.includes(value);
     });
     props.setFilter(newArray);
+    setFilteredByCategory(value);
   }
 
   let categories = [
@@ -28,28 +29,62 @@ export default function ContentFilter(props) {
     }
   }
 
+  function openFilter() {
+    let filter = document.getElementById("filter-dropdown");
+
+    if (filter.classList.contains("minimised")) {
+      filter.setAttribute("class", "");
+    } else {
+      filter.setAttribute("class", "minimised");
+    }
+    arrows();
+  }
+
+  function arrows() {
+    let arrows = document.getElementsByClassName("arrow")
+
+    for(let i = 0; i < arrows.length; i++){
+      let arrow = arrows[i]
+
+      if (arrow.classList.contains("closed"))
+      {arrow.classList.remove("closed")}
+      else {arrow.classList.add("closed")}
+    }
+  }
+
   return (
     <>
       <h4>{calcResults()}</h4>
-      <h3>Category</h3>
-      <h4>{filteredByCategory}</h4>
-      <div className="radio-option">
-        <input type="radio" name="category" onClick={props.reset} defaultChecked />
-        All
+      <div className="filter-head">
+        <h3>Category</h3>
+        <h4>{filteredByCategory}</h4>
+        <div className="arrow" onClick={openFilter}>
+        </div>
       </div>
-      {categories.map((category) => {
-        return (
-          <div className="radio-option">
-            <input
-              type="radio"
-              name="category"
-              value={category}
-              onClick={(e) => filterProduct(e.target.value)}
-            />
-            <div>{category}</div>
-          </div>
-        );
-      })}
+      <div id="filter-dropdown">
+        <div className="radio-option">
+          <input
+            type="radio"
+            name="category"
+            onClick={props.reset}
+            defaultChecked
+          />
+          All
+        </div>
+        {categories.map((category) => {
+          return (
+            <div className="radio-option">
+              <input
+                type="radio"
+                name="category"
+                value={category}
+                onClick={(e) => filterProduct(e.target.value)}
+              />
+              <div>{category}</div>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }

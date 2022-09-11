@@ -6,12 +6,15 @@ export default function Content(props) {
   const [filter, setFilter] = useState([]);
 
   useEffect(() => {
+    props.setLoading(true);
     setFilter(props.products);
+    props.setLoading(false);
   }, [props]);
 
   function reset() {
+    props.setLoading(true)
     setFilter(props.products);
-    console.log(filter)
+    props.setLoading(false);
   }
 
   return (
@@ -24,7 +27,6 @@ export default function Content(props) {
     
 
       <section>
-        <div className="filter-head"></div>
         <div className="product-section">
           <aside className="filter-column">
             <ContentFilter
@@ -35,7 +37,7 @@ export default function Content(props) {
             />
           </aside>
           <div className="product-layout">
-            <Products filter={filter} />
+            <Products filter={filter} loading={props.loading} />
           </div>
         </div>
         <div className="reccomended-layout"></div>

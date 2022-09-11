@@ -6,7 +6,7 @@ import Content from "./components/Content";
 
 function App() {
   let [products, setProducts] = useState([]);
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(true);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -15,6 +15,8 @@ function App() {
     );
     const products = await response.json();
     setProducts(products.record);
+
+  
     setLoading(false);
   };
 
@@ -27,7 +29,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Content products={products} reset={fetchProducts}/>
+      <Content products={products} reset={fetchProducts} loading={loading} setLoading={setLoading}/>
     </>
   );
 }
