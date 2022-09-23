@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.d076fa1a.css",
+    "main.css": "./static/css/main.ffb54239.css",
     "main.js": "./static/js/main.3e5cc92c.js",
     "static/media/Akkurat-Light.ttf": "./static/media/Akkurat-Light.645acec6b440ab93cf1e.ttf",
     "static/media/akkuratprobold.woff2": "./static/media/akkuratprobold.d0424f7f629e866b0a4c.woff2",
     "static/media/chronicledisplay.woff2": "./static/media/chronicledisplay.213f89e622366942d4d4.woff2",
     "static/media/logo.svg": "./static/media/logo.7bde717021bd162fb84a.svg",
     "index.html": "./index.html",
-    "main.d076fa1a.css.map": "./static/css/main.d076fa1a.css.map",
+    "main.ffb54239.css.map": "./static/css/main.ffb54239.css.map",
     "main.3e5cc92c.js.map": "./static/js/main.3e5cc92c.js.map"
   },
   "entrypoints": [
-    "static/css/main.d076fa1a.css",
+    "static/css/main.ffb54239.css",
     "static/js/main.3e5cc92c.js"
   ]
 }
