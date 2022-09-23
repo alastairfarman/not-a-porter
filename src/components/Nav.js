@@ -2,7 +2,9 @@ export default function Nav() {
   return (
     <header>
       <div className="head">
-        <div className="account"></div>
+        <div className="account">
+          <div id="profile"></div>
+        </div>
         <div className="logo">
           <svg
             alt="NET-A-PORTER Logo"
@@ -20,7 +22,6 @@ export default function Nav() {
             </g>
           </svg>
         </div>
-
         <div className="shop"></div>
       </div>
       <nav className="nav">
@@ -28,7 +29,7 @@ export default function Nav() {
           <li>New In</li>
           <li>Shop By</li>
           <li>Designers</li>
-          <li>Clothing</li>
+          <li className="active">Clothing</li>
           <li>Shoes</li>
           <li>Bags</li>
           <li>Jewelry &amp; Watches</li>

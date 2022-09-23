@@ -41,7 +41,7 @@ export default function ContentFilter(props) {
   }
 
   function arrows() {
-    let arrows = document.getElementsByClassName("arrow")
+    let arrows = document.getElementById('filter-head').getElementsByClassName("arrow")
 
     for(let i = 0; i < arrows.length; i++){
       let arrow = arrows[i]
@@ -55,7 +55,7 @@ export default function ContentFilter(props) {
   return (
     <>
       <h4>{calcResults()}</h4>
-      <div className="filter-head">
+      <div className="filter-head" id="filter-head">
         <h3>Category</h3>
         <h4>{filteredByCategory}</h4>
         <div className="arrow" onClick={openFilter}>
