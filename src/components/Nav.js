@@ -1,9 +1,17 @@
+import { useState } from "react";
+import LogIn from "./LogIn";
+
 export default function Nav() {
+
+  const [isShown, setIsShown] = useState(false)
+
+
   return (
     <header>
       <div className="head">
         <div className="account">
-          <div id="profile"></div>
+          <div id="profile" onMouseOver={()=> setIsShown(true)} onMouseOut={()=> setIsShown(false)}>{isShown && (<LogIn/>)}</div>
+          
         </div>
         <div className="logo">
           <svg

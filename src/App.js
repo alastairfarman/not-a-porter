@@ -16,7 +16,6 @@ function App() {
     const products = await response.json();
     setProducts(products.record);
 
-  
     setLoading(false);
   };
 
@@ -24,12 +23,15 @@ function App() {
     fetchProducts();
   }, []);
 
-
-
   return (
     <>
       <Nav />
-      <Content products={products} reset={fetchProducts} loading={loading} setLoading={setLoading}/>
+      <Content
+        products={products}
+        reset={fetchProducts}
+        loading={loading}
+        setLoading={setLoading}
+      />
     </>
   );
 }

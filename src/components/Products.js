@@ -34,10 +34,14 @@ export default function Products(props) {
 
             return (
               <div key={product.id} className="product-module">
-                <div className="img-wrapper"><img src={imgUrl} alt="" /></div>
+                <div className="img-wrapper">
+                  <img src={imgUrl} alt="" />
+                </div>
                 <h3>{product.brand}</h3>
                 <p className="title">{product.title}</p>
-                <h3 className="price">£{product.price}</h3>
+                <h3 className="price">
+                  £{product.price.toLocaleString("en-US")}
+                </h3>
               </div>
             );
           })}

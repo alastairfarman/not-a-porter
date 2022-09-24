@@ -1,7 +1,6 @@
 export default function Sort(props) {
+  let sortOptions = ["Price High to Low", "Price Low to High"];
 
-let sortOptions = ["Price High to Low", "Price Low to High"];
-    
   function openSort() {
     let filter = document.getElementById("sort");
 
@@ -30,10 +29,9 @@ let sortOptions = ["Price High to Low", "Price Low to High"];
   }
 
   function handleClick(e) {
-    props.setSort(e.target.innerText)
-    props.sortFilter(e.target.innerText)
+    props.setSort(e.target.innerText);
+    props.sortFilter(e.target.innerText);
   }
-
 
   return (
     <>
@@ -41,7 +39,9 @@ let sortOptions = ["Price High to Low", "Price Low to High"];
         <div id="sort" className="minimised" onClick={openSort}>
           <ul>
             {sortOptions.map((option) => (
-              <li key={option} onClick={(e) => handleClick(e)}>{option}</li>
+              <li key={option} onClick={(e) => handleClick(e)}>
+                {option}
+              </li>
             ))}
           </ul>
           <div className="arrow"></div>
