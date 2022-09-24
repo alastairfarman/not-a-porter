@@ -1,6 +1,11 @@
 export default function Products(props) {
   let products = props.filter;
 
+  const handleClick = (e) => {
+    props.setSelectedProduct(e.target.getAttribute("data-PID"));
+    props.setCurrentPage("PIP");
+  };
+
   switch (props.loading) {
     case true:
       return (
@@ -35,7 +40,12 @@ export default function Products(props) {
             return (
               <div key={product.id} className="product-module">
                 <div className="img-wrapper">
-                  <img src={imgUrl} alt="" />
+                  <img
+                    data-PID={product.id}
+                    src={imgUrl}
+                    alt=""
+                    onClick={handleClick}
+                  />
                 </div>
                 <h3>{product.brand}</h3>
                 <p className="title">{product.title}</p>

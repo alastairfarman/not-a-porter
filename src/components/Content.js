@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 import ContentFilter from "./ContentFilter";
 import Products from "./Products";
 import Sort from "./Sort";
+import PIP from "./PIP";
+
 const _ = require("lodash");
 
 export default function Content(props) {
   const [currentPage, setCurrentPage] = useState("clothing");
   const [filter, setFilter] = useState([]);
   const [sort, setSort] = useState(["Price High to Low"]);
+  const [selectedProduct, setSelectedProduct] = useState({});
 
   useEffect(() => {
     props.setLoading(true);
@@ -32,6 +35,11 @@ export default function Content(props) {
         break;
       default:
     }
+  }
+
+  function getSelectedProductObject(PID) {
+    const selectedProductObject = filter.find((object) => object.id == PID);
+    setSelectedProduct(selectedProductObject);
   }
 
   function Clothing() {
@@ -65,7 +73,12 @@ export default function Content(props) {
             <div>
               <Sort sort={sort} setSort={setSort} sortFilter={sortFilter} />
               <div className="product-layout">
-                <Products filter={filter} loading={props.loading} />
+                <Products
+                  filter={filter}
+                  loading={props.loading}
+                  setCurrentPage={setCurrentPage}
+                  setSelectedProduct={getSelectedProductObject}
+                />
               </div>
             </div>
             <div className="reccomended-layout"></div>
@@ -79,7 +92,13 @@ export default function Content(props) {
     switch (currentPage) {
       case "clothing":
         return <Clothing />;
-
+      case "PIP":
+        return (
+          <PIP
+            selectedProduct={selectedProduct}
+            setCurrentPage={setCurrentPage}
+          />
+        );
       default:
     }
   }

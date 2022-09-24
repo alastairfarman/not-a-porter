@@ -465,10 +465,6 @@ p {
   width: 100%;
 }
 
-.log-in-container form input:hover {
-  border: #000;
-}
-
 .log-in-container form input[type="submit"] {
   font-family: Akkurat;
   font-size: 0.8rem;
@@ -484,11 +480,17 @@ p {
   padding: 0.7rem;
 }
 
-.log-in-container form input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
   padding: 0.7rem;
   border: solid 1px #e5e5e5;
   border-radius: 2px;
   margin-top: 0.2rem;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+  border: solid 1px #656565;
 }
 
 @keyframes fade-in {
