@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.ffb54239.css",
-    "main.js": "./static/js/main.3e5cc92c.js",
+    "main.css": "./static/css/main.5a236fc8.css",
+    "main.js": "./static/js/main.5b50ddf0.js",
     "static/media/Akkurat-Light.ttf": "./static/media/Akkurat-Light.645acec6b440ab93cf1e.ttf",
     "static/media/akkuratprobold.woff2": "./static/media/akkuratprobold.d0424f7f629e866b0a4c.woff2",
     "static/media/chronicledisplay.woff2": "./static/media/chronicledisplay.213f89e622366942d4d4.woff2",
     "static/media/logo.svg": "./static/media/logo.7bde717021bd162fb84a.svg",
     "index.html": "./index.html",
-    "main.ffb54239.css.map": "./static/css/main.ffb54239.css.map",
-    "main.3e5cc92c.js.map": "./static/js/main.3e5cc92c.js.map"
+    "main.5a236fc8.css.map": "./static/css/main.5a236fc8.css.map",
+    "main.5b50ddf0.js.map": "./static/js/main.5b50ddf0.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffb54239.css",
-    "static/js/main.3e5cc92c.js"
+    "static/css/main.5a236fc8.css",
+    "static/js/main.5b50ddf0.js"
   ]
 }
