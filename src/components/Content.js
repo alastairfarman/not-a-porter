@@ -1,4 +1,3 @@
-import { set } from "lodash";
 import { useState, useEffect } from "react";
 import ContentFilter from "./ContentFilter";
 import Products from "./Products";
@@ -8,7 +7,6 @@ import PIP from "./PIP";
 const _ = require("lodash");
 
 export default function Content(props) {
-  const [currentPage, setCurrentPage] = useState("clothing");
   const [filter, setFilter] = useState([]);
   const [sort, setSort] = useState(["Price High to Low"]);
   const [selectedProduct, setSelectedProduct] = useState({});
@@ -76,7 +74,7 @@ export default function Content(props) {
                 <Products
                   filter={filter}
                   loading={props.loading}
-                  setCurrentPage={setCurrentPage}
+                  setCurrentPage={props.setCurrentPage}
                   setSelectedProduct={getSelectedProductObject}
                 />
               </div>
@@ -89,14 +87,16 @@ export default function Content(props) {
   }
 
   function PageContent() {
-    switch (currentPage) {
+    switch (props.currentPage) {
+      case "home":
+        return "Homepage";
       case "clothing":
         return <Clothing />;
       case "PIP":
         return (
           <PIP
             selectedProduct={selectedProduct}
-            setCurrentPage={setCurrentPage}
+            setCurrentPage={props.setCurrentPage}
           />
         );
       default:

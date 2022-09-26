@@ -2,7 +2,7 @@ export default function Products(props) {
   let products = props.filter;
 
   const handleClick = (e) => {
-    props.setSelectedProduct(e.target.getAttribute("data-PID"));
+    props.setSelectedProduct(e.target.getAttribute("data-pid"));
     props.setCurrentPage("PIP");
   };
 
@@ -38,13 +38,12 @@ export default function Products(props) {
             let imgUrl = `./assets/img/${product.id}.avif`;
 
             return (
-              <div key={product.id} className="product-module">
+              <div key={product.id} className="product-module" data-pid={product.id} onClick={handleClick}>
                 <div className="img-wrapper">
                   <img
-                    data-PID={product.id}
+                    data-pid={product.id}
                     src={imgUrl}
                     alt=""
-                    onClick={handleClick}
                   />
                 </div>
                 <h3>{product.brand}</h3>

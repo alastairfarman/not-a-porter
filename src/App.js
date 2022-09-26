@@ -4,9 +4,11 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Content from "./components/Content";
 
+
 function App() {
   let [products, setProducts] = useState([]);
   let [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState("clothing");
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -25,12 +27,14 @@ function App() {
 
   return (
     <>
-      <Nav />
+      <Nav setCurrentPage={setCurrentPage} />
       <Content
         products={products}
         reset={fetchProducts}
         loading={loading}
         setLoading={setLoading}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
     </>
   );
